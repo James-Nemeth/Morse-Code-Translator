@@ -1,0 +1,102 @@
+// Variables for consistent styling
+$font-family: 'Arial', sans-serif;
+$primary-color: #4CAF50;
+$secondary-color: #ffffff;
+$background-color: #f4f4f9;
+$error-color: #e74c3c;
+$input-border: #ccc;
+$button-hover: darken($primary-color, 10%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'tinos', 'Courier New', Courier, monospace;
+}
+
+// Global styles
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: $primary-color;
+}
+
+// Container for inputs and buttons
+div {
+  margin: 20px auto;
+  width: 80%;
+  padding: 20px;
+  background: $secondary-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 15px;
+  width: 90%;
+  font-size: 1rem;
+  border: 1px solid $input-border;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+button {
+  margin: 15px auto;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $secondary-color;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+
+  &:hover {
+    background-color: $button-hover;
+    transform: scale(1.05);
+  }
+}
+
+h4 {
+  color: $error-color;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+// Responsive design for smaller screens
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  div {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  input, button {
+    width: 50%;
+  }
+}
