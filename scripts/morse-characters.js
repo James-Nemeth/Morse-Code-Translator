@@ -1,4 +1,4 @@
-export default {
+const morseCode =  {
     "A": ".-",
     "B": "-...",
     "C": "-.-.",
@@ -56,3 +56,5 @@ export default {
     "30": "...-- -----",
     "31": "...-- .----"
 };
+
+export default morseCode;
