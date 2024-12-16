@@ -1,50 +1,45 @@
 import { translateToMorse, translateToEnglish } from './translator.js';
 
 describe('Morse Code Translator', () => {
-  // Define reusable error messages
   const unsupportedCharError = (char) => `Character "${char}" cannot be translated to Morse code.`;
   const unsupportedMorseError = (code) => `Morse code "${code}" cannot be translated to English.`;
 
   describe('translateToMorse', () => {
     it('should translate English to Morse', () => {
-      // Valid English to Morse translations
-      expect(translateToMorse('A')).toBe('.-'); // Single character: 'A' -> '.-'
-      expect(translateToMorse('B C')).toBe('-... / -.-.'); // Space between letters
-      expect(translateToMorse('HELLO WORLD')).toBe('.... . .-.. .-.. --- / .-- --- .-. .-.. -..'); // Full sentence
+      expect(translateToMorse('A')).toBe('.-'); 
+      expect(translateToMorse('B C')).toBe('-... / -.-.'); 
+      expect(translateToMorse('My name is James')).toBe('-- -.-- / -. .- -- . / .. ... / .--- .- -- . ...');
     });
 
     it('should handle spaces correctly', () => {
-      // Space between words represented by "/"
-      expect(translateToMorse('A B')).toBe('.- / -...'); // Translating 'A B' to Morse
-      expect(translateToMorse('AB A B')).toBe('.- -... / .- / -...'); // Space-separated words
+      expect(translateToMorse('A B')).toBe('.- / -...');
+      expect(translateToMorse('AB A B')).toBe('.- -... / .- / -...'); 
     });
 
     it('should throw an error for unsupported characters', () => {
-      // Unsupported characters throw an error with specific messages
-      expect(() => translateToMorse('.')).toThrow(unsupportedCharError('.')); // '.' is not valid
-      expect(() => translateToMorse('@')).toThrow(unsupportedCharError('@')); // '@' is not valid
-      expect(() => translateToMorse('!')).toThrow(unsupportedCharError('!')); // '!' is not valid
+      expect(() => translateToMorse('.')).toThrow(unsupportedCharError('.')); 
+      expect(() => translateToMorse('@')).toThrow(unsupportedCharError('@')); 
+      expect(() => translateToMorse('!')).toThrow(unsupportedCharError('!')); 
     });
   });
 
   describe('translateToEnglish', () => {
     it('should translate Morse to English', () => {
-      // Valid Morse to English translations
-      expect(translateToEnglish('.-')).toBe('A'); // Translating '.-' to 'A'
-      expect(translateToEnglish('-... / -.-.')).toBe('B C'); // Translating '-... / -.-.' to 'B C'
-      expect(translateToEnglish('.... . .-.. .-.. --- / .-- --- .-. .-.. -..')).toBe('HELLO WORLD'); // Full sentence
+
+      expect(translateToEnglish('.-')).toBe('A'); 
+      expect(translateToEnglish('-... / -.-.')).toBe('B C'); 
+      expect(translateToEnglish('.... . .-.. .-.. --- / .-- --- .-. .-.. -..')).toBe('HELLO WORLD');
     });
 
     it('should handle spaces correctly', () => {
-      // "/" in Morse translates back to spaces
-      expect(translateToEnglish('.- / -...')).toBe('A B'); // Translating '.- / -...' to 'A B'
-      expect(translateToEnglish('.- -... / .- / -...')).toBe('AB A B'); // Translating Morse with spaces
+     
+      expect(translateToEnglish('.- / -...')).toBe('A B'); 
+      expect(translateToEnglish('.- -... / .- / -...')).toBe('AB A B'); 
     });
 
     it('should throw an error for unsupported Morse code', () => {
-      // Unsupported Morse sequences throw an error with specific messages
-      expect(() => translateToEnglish('...---...')).toThrow(unsupportedMorseError('...---...')); // Invalid SOS
-      expect(() => translateToEnglish('.----.')).toThrow(unsupportedMorseError('.----.')); // Invalid sequence
+      expect(() => translateToEnglish('...---...')).toThrow(unsupportedMorseError('...---...')); 
+      expect(() => translateToEnglish('.----.')).toThrow(unsupportedMorseError('.----.')); 
     });
   });
 });
