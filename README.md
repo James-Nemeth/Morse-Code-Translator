@@ -2,7 +2,7 @@
 
 ## Requirements / Purpose
 
-## MVP
+# MVP
 
 -   Create a user interface that allows the user to either input some English text or some Morse Code
 -   Create JS functions that would allow the user to:
