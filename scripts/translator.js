@@ -19,7 +19,7 @@ export function translateToMorse(english) {
       result.push(morseCode[char]);
     } else {
       // error for unsupported characters
-      throw new Error(`Character "${char}" cannot be translated to Morse code.`);
+      throw new Error(`${char} cannot be translated to Morse code.`);
     }
   }
   // return the morse code
@@ -39,7 +39,7 @@ export function translateToEnglish(morse) {
       result.push(englishFromMorse[code]);
     } else {
       // error for unsupported characters
-      throw new Error(`Morse code "${code}" cannot be translated to English.`);
+      throw new Error(`${code} cannot be translated to English.`);
     }
   }
   // return the english result

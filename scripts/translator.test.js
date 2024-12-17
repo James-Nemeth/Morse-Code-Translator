@@ -5,7 +5,7 @@ describe('Morse Code Translator', () => {
   const unsupportedMorseError = (code) => `${code} cannot be translated to English.`;
 
   describe('translateToMorse', () => {
-    it('should translate English to Morse', () => {
+    it('translate English to Morse', () => {
       expect(translateToMorse('A')).toBe('.-'); 
       expect(translateToMorse('B C')).toBe('-... / -.-.'); 
       expect(translateToMorse('My name is James')).toBe('-- -.-- / -. .- -- . / .. ... / .--- .- -- . ...');
@@ -14,9 +14,10 @@ describe('Morse Code Translator', () => {
     it('should handle spaces correctly', () => {
       expect(translateToMorse('A B')).toBe('.- / -...');
       expect(translateToMorse('AB A B')).toBe('.- -... / .- / -...'); 
+      expect(translateToMorse('HELLO WORLD HELLO WORLD')).toBe('.... . .-.. .-.. --- / .-- --- .-. .-.. -.. / .... . .-.. .-.. --- / .-- --- .-. .-.. -..'); 
     });
 
-    it('should throw an error for unsupported characters', () => {
+    it('throw an error for unsupported characters', () => {
       expect(() => translateToMorse('.')).toThrow(unsupportedCharError('.')); 
       expect(() => translateToMorse('@')).toThrow(unsupportedCharError('@')); 
       expect(() => translateToMorse('!')).toThrow(unsupportedCharError('!')); 
@@ -24,7 +25,7 @@ describe('Morse Code Translator', () => {
   });
 
   describe('translateToEnglish', () => {
-    it('should translate Morse to English', () => {
+    it('translate Morse to English', () => {
 
       expect(translateToEnglish('.-')).toBe('A'); 
       expect(translateToEnglish('-... / -.-.')).toBe('B C'); 
@@ -37,7 +38,7 @@ describe('Morse Code Translator', () => {
       expect(translateToEnglish('.- -... / .- / -...')).toBe('AB A B'); 
     });
 
-    it('should throw an error for unsupported Morse code', () => {
+    it('throw an error for unsupported Morse code', () => {
       expect(() => translateToEnglish('...---...')).toThrow(unsupportedMorseError('...---...')); 
       expect(() => translateToEnglish('.----.')).toThrow(unsupportedMorseError('.----.')); 
     });
