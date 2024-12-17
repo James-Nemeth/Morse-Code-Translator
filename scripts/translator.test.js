@@ -1,8 +1,8 @@
 import { translateToMorse, translateToEnglish } from './translator.js';
 
 describe('Morse Code Translator', () => {
-  const unsupportedCharError = (char) => `Character "${char}" cannot be translated to Morse code.`;
-  const unsupportedMorseError = (code) => `Morse code "${code}" cannot be translated to English.`;
+  const unsupportedCharError = (char) => `${char} cannot be translated to Morse code.`;
+  const unsupportedMorseError = (code) => `${code} cannot be translated to English.`;
 
   describe('translateToMorse', () => {
     it('should translate English to Morse', () => {
