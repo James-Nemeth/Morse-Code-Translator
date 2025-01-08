@@ -14,8 +14,11 @@ $button-hover: darken($primary-color, 10%);
     font-family: 'Courier New', Courier, monospace;
 }
 
-// Global styles
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: $font-family;
   margin: 0;
   padding: 0;
@@ -23,6 +26,7 @@ body {
   color: #333;
   text-align: center;
   line-height: 1.6;
+  height: 80vh;
 }
 
 h1 {
@@ -31,7 +35,6 @@ h1 {
   color: $primary-color;
 }
 
-// Container for inputs and buttons
 div {
   margin: 20px auto;
   width: 80%;
@@ -81,7 +84,6 @@ h4 {
   margin-top: 15px;
 }
 
-// Responsive design for smaller screens
 @media (max-width: 768px) {
   body {
     font-size: 0.9rem;
@@ -96,7 +98,7 @@ h4 {
     padding: 15px;
   }
 
-  input, button {
-    width: 50%;
+  input {
+    width: 100%;
   }
 }
