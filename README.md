@@ -45,7 +45,7 @@ Using JavaScript, SCSS/Sass, HTML.
 ## Features
 
 - Either Morse code or English can be written into the input and it will be automatically detected and change to the opposite language.
-- Any letter of the alphabet and numbers from 1 - 31 can be translated.
+- Any letter of the alphabet and numbers can be translated.
 - Morse code spaces are shown as '/' for the user to know each word being translated
 - Letters and numbers can be combined in the input
 
@@ -72,7 +72,7 @@ Using JavaScript, SCSS/Sass, HTML.
 ## What did you struggle with?
 
 - Took a bit to find the right logic to to translate english to morse code, but once l figured it out, it was easier to apply it to morse code to english
-- The testing wasn't to bad, just wanted to make sure all the name made sense and that l used enough test cases to make it valid.
+- The testing wasn't to bad, just wanted to make sure all the names made sense and that l used enough test cases to make it valid.
 
 ---
 
